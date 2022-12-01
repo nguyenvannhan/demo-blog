@@ -1,0 +1,37 @@
+<div class="py-3">
+  <h3 class="text-center">Blog List</h3>
+
+  <div class="text-center">
+    <%= link_to "New blog", new_blog_path %>
+  </div>
+ 
+
+<div id="blogs" class="py-3">
+  <div class="table-responsive">
+      <table id="blog-list" class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Published At</th>
+            <th>Comment Count</th>
+            <th></th>
+            </tr>
+        </thead>
+        <tbody>
+          <% @blogs.each do |blog| %>
+            <tr>
+              <td><%= blog.id %></td>
+              <td><%= blog.title %></td>
+              <td><%= blog.published_at %></td>
+              <td>0</td>
+              <td>
+                <%= link_to "Edit", edit_blog_path(blog) %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  </div>
+</div>
+
