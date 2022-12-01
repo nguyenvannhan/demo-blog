@@ -6,8 +6,10 @@
   </div>
  
 
-<div id="blogs" class="py-3">
-  <div class="table-responsive">
+
+  <div id="blogs" class="py-3">
+    <div class="table-responsive">
+      <p class="text-success text-center mb-3"><%= notice %></p>
       <table id="blog-list" class="table table-bordered table-striped">
         <thead>
           <tr>
@@ -22,7 +24,7 @@
           <% @blogs.each do |blog| %>
             <tr>
               <td><%= blog.id %></td>
-              <td><%= blog.title %></td>
+              <td><%= link_to blog.title, blog_url(blog) %></td>
               <td><%= blog.published_at %></td>
               <td>0</td>
               <td>
@@ -32,6 +34,7 @@
           <% end %>
         </tbody>
       </table>
+    </div>
   </div>
 </div>
 
