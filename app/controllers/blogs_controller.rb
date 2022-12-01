@@ -12,6 +12,7 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1
   def show
+    @comments = @blog.comments
 
     @comment = Comment.new
   end
