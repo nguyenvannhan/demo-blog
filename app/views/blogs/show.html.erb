@@ -10,5 +10,34 @@
     <div>
       <%= @blog.content %>
     </div>
+
+    <hr>
+    <div class="comments-wrapper mt-3">
+      <h3>Comments</h3>
+
+      <p class="text-success"><%= notice %></p>
+
+      <%# Show comments area %>
+
+      <%# Create comments area %>
+      <div class="create-comment-area">
+
+        <%= form_with(model: @comment, url: [@blog, @comment]) do |form| %>
+          <div class="mb-3">
+            <%= form.label :title, style: "display: block" %>
+            <%= form.text_field :title %>
+          </div>
+
+          <div class="mb-3">
+            <%= form.label :content, style: "display: block" %>
+            <%= form.text_area :content %>
+          </div>
+
+          <div>
+            <%= form.submit "Submit", :class=>"btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
