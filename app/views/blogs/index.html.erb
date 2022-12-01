@@ -9,7 +9,10 @@
 
   <div id="blogs" class="py-3">
     <div class="table-responsive">
+      <%# Show message when update or create success %>
       <p class="text-success text-center mb-3"><%= notice %></p>
+      
+      <%# Table show data Area %>
       <table id="blog-list" class="table table-bordered table-striped">
         <thead>
           <tr>
@@ -34,6 +37,11 @@
           <% end %>
         </tbody>
       </table>
+    </div>
+
+    <%# Pagination Area %>
+    <div class="mt-3">
+      <%= paginate @blogs %>
     </div>
   </div>
 </div>

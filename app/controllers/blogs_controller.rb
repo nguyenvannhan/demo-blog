@@ -3,7 +3,11 @@ class BlogsController < ApplicationController
 
   # GET /blogs
   def index
-    @blogs = Blog.all
+    # get current page from param page of URL or deafult is 1
+    current_page = params[:page].presence || 1
+
+    # default per_page is 25, can custom by .per(number)
+    @blogs = Blog.order(published_at: :DESC).page(current_page).per(1)
   end
 
   # GET /blogs/1
