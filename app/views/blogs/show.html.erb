@@ -29,7 +29,7 @@
                 </div>
                 <div class="card-footer">
                   <%= link_to "Edit", edit_comment_path(blog_comment) %>
-                  <%= link_to "Delete", blog_comment, data: { turbo_method: :DELETE, turbo_confirm: "Are you sur?" }, class: "pl-3 text-danger" %>
+                  <%= link_to "Delete", comment_path(blog_comment), data: { turbo_method: :delete, turbo_confirm: "Are you sur?" }, class: "pl-3 text-danger" %>
                 </div>
               </div>
             </div>

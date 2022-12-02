@@ -27,6 +27,18 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @blog = @comment.blog
+
+    @comment.destroy
+
+    if @blog.nil?
+        redirect_to blogs_url, notice: "Delete comment successfully!"
+      else
+        redirect_to blog_url(@blog), notice: "Delete comment successfully!"
+    end
+  end
+
   private
 
   def set_comment
