@@ -8,7 +8,7 @@
     <p class="py-2 fw-bold text-center"><%= @blog.published_at %></h1>
 
     <div>
-      <%= @blog.content %>
+      <%= @blog.content.html_safe %>
     </div>
 
     <hr>
